@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MagicDay.Admin.Site" ClientIDMode="Predictable" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="UI/Styles/MasterStyle.css" />
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="siteScriptManager" runat="server" EnablePartialRendering="true" />
+        <div id="background">
+            <div id="masterPageBody">
+                <asp:UpdatePanel ID="masterHeader" runat="server" UpdateMode="Conditional">
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="loginPanelButton" EventName="Click" />
+                        <%-- <asp:AsyncPostBackTrigger ControlID="registerPanelButton" EventName="Click" />--%>
+                    </Triggers>
+                    <ContentTemplate>
+                        <asp:Panel ID="headerBody" CssClass="headerBodyNormal" runat="server">
+
+                            <div id="mdLogo">
+                                <a href="Default.aspx">
+                                    <asp:Image ID="mdLogoId" runat="server" ImageUrl="UI\Images\mdLogoSmallTransparent.png" />
+                                </a>
+                            </div>
+                            <div id="headerArea">
+                                <ul class="horizontalUl">
+                                    <li>
+                                        <asp:Label ID="pageHeaderText" runat="server" CssClass="mediumNormalText" />
+                                    </li>
+                                    <li style="margin-left: 150px">
+                                        <asp:Label ID="greetingsLabel" runat="server" />
+                                    </li>
+                                </ul>
+                                <ul class="horizontalUl">
+                                    <li>
+                                        <asp:Button ID="loginPanelButton" runat="server" Text="Login" OnClick="loginPanelButton_Click" CssClass="btn  mdButton" />
+                                    </li>
+                                    <li>
+                                        <%-- <asp:Button ID="registerPanelButton" runat="server" Text="Register" OnClick="registerPanelButton_Click" CssClass="btn mdButton" />--%>
+                                    </li>
+                                </ul>
+                                <asp:Panel ID="loginPanel" runat="server" Visible="false" CssClass="hasLabel hasCheckBox hasTextBox" Width="400px">
+                                    <asp:Login ID="loginControl" runat="server" RenderOuterTable="False">
+                                        <LayoutTemplate>
+                                            <asp:Label ID="userNameLabel" runat="server" AssociatedControlID="UserName" Text="Email Address:" />
+                                            <br />
+                                            <ul class="horizontalUl">
+                                                <li>
+                                                    <asp:TextBox ID="userName" runat="server" CssClass="form-control" />
+                                                </li>
+
+                                                <li style="vertical-align: top">
+                                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server"
+                                                        CssClass="errorText"
+                                                        ControlToValidate="UserName"
+                                                        ErrorMessage="*"
+                                                        ToolTip="Email Address is required."
+                                                        ValidationGroup="ctl00$loginControl" />
+                                                </li>
+                                            </ul>
+                                            <asp:Label ID="passwordLabel" runat="server" AssociatedControlID="Password" Text="Password:" />
+                                            <br />
+
+                                            <ul class="horizontalUl">
+                                                <li>
+                                                    <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="form-control" />
+                                                </li>
+                                                <li style="vertical-align: top">
+                                                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server"
+                                                        CssClass="errorText"
+                                                        ControlToValidate="Password"
+                                                        ErrorMessage="*"
+                                                        ToolTip="Password is required."
+                                                        ValidationGroup="ctl00$loginControl" />
+                                                </li>
+                                            </ul>
+                                            <asp:CheckBox ID="rememberMe" runat="server" Text="Remember me next time." />
+                                            <br />
+                                            <asp:Button ID="loginButton" runat="server"
+                                                CommandName="Login"
+                                                Text="Submit"
+                                                ValidationGroup="ctl00$loginControl"
+                                                OnClick="LoginButton_Click" CssClass="btn mdButton" />
+                                            <br />
+                                            <asp:Label ID="FailureText" runat="server" EnableViewState="False" />
+                                        </LayoutTemplate>
+                                    </asp:Login>
+                                </asp:Panel>
+                                <%-- <asp:Panel ID="registerPanel" runat="server" Visible="false" CssClass="hasLabel" Width="400px">
+
+                                    <asp:Label ID="userFullNameLabel" runat="server" Text="Name:" AssociatedControlID="userFullName" />
+                                    <br />
+                                    <asp:TextBox ID="userFullName" runat="server" />
+
+                                    <br />
+                                    <asp:Label ID="userEmailLabel" runat="server" Text="Email Address:" AssociatedControlID="userEmail" />
+                                    <br />
+                                    <asp:TextBox ID="userEmail" runat="server" AutoPostBack="True" />
+                                    <asp:Label ID="emailExists" runat="server" />
+                                    <br />
+
+                                    <asp:Label ID="userPwdLabel" runat="server" Text="Password:" AssociatedControlID="userPwd" />
+                                    <br />
+                                    <asp:TextBox ID="userPwd" runat="server" MaxLength="50" TextMode="Password" />
+                                    <br />
+
+                                    <asp:Label ID="userPwdConfLabel" runat="server" Text=" Confirm Password:" AssociatedControlID="userPwsConf" />
+                                    <br />
+                                    <asp:TextBox ID="userPwsConf" runat="server" MaxLength="50" TextMode="Password" />
+                                    <br />
+
+                                    <asp:Button ID="registerUser" runat="server" Text="Register" OnClick="registerUser_Click" />
+
+                                </asp:Panel>--%>
+                            </div>
+                        </asp:Panel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+            <div id="sideMenuDiv">
+                <%-- <input type="button" value="Debug" onclick="defaultProdSlide()" />--%>
+                <nav id="sideMenu">
+                    <ul>
+                        <li class="li_button">
+                            <asp:LinkButton ID="navHome" runat="server" Text="Home" OnClick="navHome_Click" /></li>
+                        <li class="li_button">
+                            <asp:LinkButton ID="navCategories" runat="server" Text="Categories" OnClick="navCategories_Click" /></li>
+                        <li class="li_button">
+                            <asp:LinkButton ID="navProducts" runat="server" Text="Products" OnClick="navProducts_Click" /></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="centerContentBody">
+                <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

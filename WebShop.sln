@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDay.BusinessLogic", "MagicDay.BusinessLogic\MagicDay.BusinessLogic.csproj", "{E7FC5781-917D-46D1-80CB-38067E6E2E75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDay.Admin", "MagicDay.Admin\MagicDay.Admin.csproj", "{AE4BAB50-9438-42B4-8967-C379A6CEF935}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EEA60027-B185-48D4-87A5-A8C5D90F5541} = {EEA60027-B185-48D4-87A5-A8C5D90F5541}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDay.Admin.Test", "MagicDay.Admin.Test\MagicDay.Admin.Test.csproj", "{38B87CD1-E76A-4028-8E02-8E719112593A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDay.OrderManager", "MagicDay.OrderManager\MagicDay.OrderManager.csproj", "{EEA60027-B185-48D4-87A5-A8C5D90F5541}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MagicDay.Database", "MagicDay.Database\MagicDay.Database.sqlproj", "{4E9D7786-FA15-498C-83EC-83AEB71FE5AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDay.DataModel", "MagicDay.DataModel\MagicDay.DataModel.csproj", "{330CF32A-9F22-45C8-B07C-07CB083F1460}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7FC5781-917D-46D1-80CB-38067E6E2E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FC5781-917D-46D1-80CB-38067E6E2E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FC5781-917D-46D1-80CB-38067E6E2E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FC5781-917D-46D1-80CB-38067E6E2E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE4BAB50-9438-42B4-8967-C379A6CEF935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE4BAB50-9438-42B4-8967-C379A6CEF935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE4BAB50-9438-42B4-8967-C379A6CEF935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE4BAB50-9438-42B4-8967-C379A6CEF935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B87CD1-E76A-4028-8E02-8E719112593A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B87CD1-E76A-4028-8E02-8E719112593A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B87CD1-E76A-4028-8E02-8E719112593A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B87CD1-E76A-4028-8E02-8E719112593A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA60027-B185-48D4-87A5-A8C5D90F5541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA60027-B185-48D4-87A5-A8C5D90F5541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA60027-B185-48D4-87A5-A8C5D90F5541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA60027-B185-48D4-87A5-A8C5D90F5541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9D7786-FA15-498C-83EC-83AEB71FE5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9D7786-FA15-498C-83EC-83AEB71FE5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9D7786-FA15-498C-83EC-83AEB71FE5AF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4E9D7786-FA15-498C-83EC-83AEB71FE5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9D7786-FA15-498C-83EC-83AEB71FE5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9D7786-FA15-498C-83EC-83AEB71FE5AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{330CF32A-9F22-45C8-B07C-07CB083F1460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330CF32A-9F22-45C8-B07C-07CB083F1460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330CF32A-9F22-45C8-B07C-07CB083F1460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{330CF32A-9F22-45C8-B07C-07CB083F1460}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://infius.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MagicDay.Admin\\MagicDay.Admin.csproj
+		SccProjectName1 = MagicDay.Admin
+		SccLocalPath1 = MagicDay.Admin
+		SccProjectUniqueName2 = MagicDay.Admin.Test\\MagicDay.Admin.Test.csproj
+		SccProjectName2 = MagicDay.Admin.Test
+		SccLocalPath2 = MagicDay.Admin.Test
+		SccProjectUniqueName3 = MagicDay.Database\\MagicDay.Database.sqlproj
+		SccProjectName3 = MagicDay.Database
+		SccLocalPath3 = MagicDay.Database
+		SccProjectUniqueName4 = MagicDay.BusinessLogic\\MagicDay.BusinessLogic.csproj
+		SccProjectName4 = MagicDay.BusinessLogic
+		SccLocalPath4 = MagicDay.BusinessLogic
+		SccProjectUniqueName5 = MagicDay.OrderManager\\MagicDay.OrderManager.csproj
+		SccProjectName5 = MagicDay.OrderManager
+		SccLocalPath5 = MagicDay.OrderManager
+		SccProjectUniqueName6 = MagicDay.DataModel\\MagicDay.DataModel.csproj
+		SccProjectName6 = MagicDay.DataModel
+		SccLocalPath6 = MagicDay.DataModel
+	EndGlobalSection
+EndGlobal
